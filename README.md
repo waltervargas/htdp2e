@@ -9,5 +9,5 @@ Under Debian platform:
    ```
 apt-get install racket
 ```
-
 2. Run `drracket`
+3. Load the files under `src/` folder and click run.
