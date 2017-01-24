@@ -1,5 +1,5 @@
 # htdp2e
-How To Design Programs Second Editions - Excercises.
+How To Design Programs Second Edition - Excercises.
 
 ## How to run the programs?
 
