@@ -1,8 +1,8 @@
-* How to Design Data
+* 2: How to Design Data
 
-** Exercises
+** Practice Problems
 *** rocket
-**** PROBLEM A
+**** Problem A
 
  You are designing a program to track a rocket's journey as it descends 100
  kilometers to Earth. You are only interested in the descent from 100 kilometers
@@ -30,4 +30,28 @@
 ;; - one of: 2 cases
 ;; - atomic distinc: false
 ;; - atomic non-distinc: Integer (0,100]
+     #+END_SRC
+
+**** Problem B
+     Design a function that will output the rocket's remaining descent distance
+in a short string that can be broadcast on Twitter. When the descent is over,
+the message should be "The rocket has landed!". Call your function
+rocket-descent-to-msg.
+
+**** Solution
+     #+BEGIN_SRC racket
+;; Number -> String
+;; produces a short string with the rocket's remaining descent distance
+(check-expect (rocket-descent-to-msg 0)   "The rocket has landed!")
+(check-expect (rocket-descent-to-msg 100) "Rocket's remaining descent distance is 100")
+(check-expect (rocket-descent-to-msg 50) "Rocket's remaining descent distance is 50")
+                                  
+;(define (rocket-descent-to-msg d) "The rocket has landed!") ; this is the stub
+
+(define (rocket-descent-to-msg d)
+  (cond [(= d 0) "The rocket has landed!"]
+        [else
+         (string-append
+          "Rocket's remaining descent distance is "
+          (number->string d))]))
      #+END_SRC
