@@ -1,0 +1,33 @@
+* How to Design Data
+
+** Exercises
+*** rocket
+**** PROBLEM A
+
+ You are designing a program to track a rocket's journey as it descends 100
+ kilometers to Earth. You are only interested in the descent from 100 kilometers
+ to touchdown. Once the rocket has landed it is done.
+
+ Design a data definition to represent the rocket's remaining descent. Call it
+ RocketDescent.
+
+**** Solution
+     #+BEGIN_SRC racket
+;; RocketDescent is one of:
+;;  - Integer[0, 100]
+;;  - false
+;; interp. Rocket kilometers to touchdown
+(define RD1 100)   ; 100km to land
+(define RD2 50)    ; 50km to land
+(define RD3 0.5)   ; 0.5 km to land
+(define RD4 false) ; landed.
+
+#;
+(define (fn-for-rocket-descent rd)
+  (... rd))
+
+;; Template rules used:
+;; - one of: 2 cases
+;; - atomic distinc: false
+;; - atomic non-distinc: Integer (0,100]
+     #+END_SRC
